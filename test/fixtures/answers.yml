@@ -2,6 +2,8 @@
 
 one:
   body: MyString
+  correct: false
 
 two:
   body: MyString
+  correct: false
