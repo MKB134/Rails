@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_153049) do
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.string "body"
-    t.boolean "correct"
+    t.string "body", null: false
+    t.boolean "correct", null: false
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 2021_07_15_153049) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "category"
+    t.string "category", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "body"
+    t.string "body", null: false
     t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_153049) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
