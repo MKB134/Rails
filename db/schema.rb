@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2021_07_21_112928) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.boolean "status", null: false
     t.bigint "user_id", null: false
     t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
