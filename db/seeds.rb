@@ -18,9 +18,9 @@ categories = Category.create ([
   ])
 
 tests = Test.create ([
-  { title: 'UFC Light weight', level: 0, category_id:[0].id, author_id: users[0].id },
-  { title: 'UFC Light heavyweight', level: 1, category_id:[1].id, author_id: users[0].id },
-  { title: 'UFC Heavyweight', level: 2, category_id:[2].id, author_id: users[0].id }
+  { title: 'UFC Light weight', level: 0, category_id: categories[0].id, author_id: users[0].id },
+  { title: 'UFC Light heavyweight', level: 1, category_id: categories[1].id, author_id: users[0].id },
+  { title: 'UFC Heavyweight', level: 2, category_id: categories[2].id, author_id: users[0].id }
   ])
 
 results = Result.create ([
