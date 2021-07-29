@@ -11,13 +11,10 @@ Result.destroy_all
 Test.destroy_all
 User.destroy_all
 
-
-
 users = User.create! ([
   {name: 'Max'},
   {name: 'Adam'}
 ])
-
 
 categories = Category.create! ([
   { title: 'Light weight' },
@@ -36,15 +33,13 @@ results = Result.create! ([
   { user_id: users[1].id, test_id: tests[1].id }
   ])
 
-
 questions = Question.create! ([
   { body: 'Who is the UFC light weight champion?', test_id: tests[0].id },
   { body: 'Who is the UFC light heavyweight champion?', test_id: tests[1].id },
   { body: 'Who is the UFC Heavyweight champion?', test_id: tests[2].id }
   ])
 
-
-answers = Answer.create! ([
+Answer.create! ([
   {body: 'Dustin Poirier', question_id: questions [0].id },
   {body: 'Justin Gaethje', question_id: questions [0].id },
   {body: 'Charles Oliveira', question_id: questions [0].id, correct: true },
