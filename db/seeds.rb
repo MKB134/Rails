@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
+Answer.destroy_all
+Question.destroy_all
+Result.destroy_all
+Test.destroy_all
+User.destroy_all
 
 
 
@@ -17,14 +20,14 @@ users = User.create ([
 
 
 categories = Category.create ([
-  { category: 'Light weight' },
-  { category: 'Light heavyweight'},
-  { category: 'Heavyweight'},
+  { title: 'Light weight' },
+  { title: 'Light heavyweight'},
+  { title: 'Heavyweight'},
   ])
 
 tests = Test.create ([
   { title: 'UFC Light weight', level: 0, category_id: categories[0].id, author_id: users[0].id },
-  { title: 'UFC Light heavyweight', level: 1, category_id: categories[1].id, author_id: users[0].id },
+  { title: 'UFC Light heavyweight', level: 1, category_id: categories[1].id, author_id: users[1].id },
   { title: 'UFC Heavyweight', level: 2, category_id: categories[2].id, author_id: users[0].id }
   ])
 
