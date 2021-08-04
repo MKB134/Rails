@@ -1,5 +1,5 @@
 class Test < ApplicationRecord
-  belongs_to :category
+  belongs_to :category, dependent: :destroy
   belongs_to :author, class_name: 'User', optional: true
 
   has_many :questions, dependent: :destroy

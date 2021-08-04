@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :tests, dependet: :destroy
+  has_many :tests
 end

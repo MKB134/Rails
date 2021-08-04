@@ -28,7 +28,7 @@ tests = Test.create! ([
   { title: 'UFC Heavyweight', level: 2, category_id: categories[2], author_id: users[0] }
   ])
 
-results = Result.create! ([
+Result.create! ([
   { user_id: users[0], test_id: tests[0] },
   { user_id: users[1], test_id: tests[1] }
   ])
