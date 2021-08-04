@@ -1,9 +1,11 @@
 class Test < ApplicationRecord
-  has_many :questions
   belongs_to :category
-  has_many :results
-  has_many :users, through: :results
   belongs_to :author, class_name: 'User', optional: true
+
+  has_many :questions, dependent: :destroy
+  has_many :results, dependent: :destroy
+  has_many :users, through: :results
+
 
   def self.titles_by_category(category_name)
     Test
