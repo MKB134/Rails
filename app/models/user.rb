@@ -1,11 +1,9 @@
 class User < ApplicationRecord
   has_many :results, dependent: :destroy
-  has_many :tests, through: :results? dependent: :nullify
-  has_many :author, class_name: 'Test', foreign_key: 'author_id'
+  has_many :tests, through: :results
+  has_many :author, class_name: 'Test', foreign_key: 'author_id', dependent: :nullify
 
-  def titles_by_category(level)
-    Test
-      .joins("JOIN results ON tests.id = results.test_id")
-      .where(results: {user_id: self.id}, tests: {level: level})
+  def show_passed_by_level(level)
+    tests.where(level: level)
   end
 end
