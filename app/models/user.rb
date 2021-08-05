@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :results, dependent: :destroy
-  has_many :tests, through: :results
-  has_many :author, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
+  has_many :tests, through: :results? dependent: :nullify
+  has_many :author, class_name: 'Test', foreign_key: 'author_id'
 
   def titles_by_category(level)
     Test
