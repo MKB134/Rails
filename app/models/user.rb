@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-  def corses_by_level(level)
-    Test
-      .joins("JOIN results ON tests.id = results.test_id")
-      .where(results: {user_id: self.id}, tests: {level: level})
+  has_many :results, dependent: :destroy
+  has_many :tests, through: :results
+  has_many :author, class_name: 'Test', foreign_key: 'author_id', dependent: :nullify
+
+  def show_passed_by_level(level)
+    tests.where(level: level)
   end
 end

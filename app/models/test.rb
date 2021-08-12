@@ -1,7 +1,15 @@
 class Test < ApplicationRecord
+  belongs_to :category, optional: true
+  belongs_to :author, class_name: 'User', optional: true
+
+  has_many :questions, dependent: :destroy
+  has_many :results, dependent: :destroy
+  has_many :users, through: :results
+
+
   def self.titles_by_category(category_name)
     Test
-      .joins("JOIN categories ON tests.category_id = categories.id")
+      .joins(:category)
       .where(categories: { title: category_name })
       .order(title: :desc)
       .pluck(:title)
