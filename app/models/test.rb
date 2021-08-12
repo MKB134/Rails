@@ -10,6 +10,9 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> {where(level: 5..Float::INFINITY)}
 
+  validates :level, numericality: { only_integer: true }
+  validates :title, presense: true, uniqueness: { scope: :level }
+
   def self.titles_by_category(category_name)
     Test
       .joins(:category)
