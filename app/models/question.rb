@@ -4,7 +4,7 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :validates_max_answers
-  
+
   def validates_max_answers
     errors.add(:amount) if question.answers.count >= 4
   end
