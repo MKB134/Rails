@@ -12,8 +12,8 @@ Test.destroy_all
 User.destroy_all
 
 users = User.create! ([
-  {name: 'Max'},
-  {name: 'Adam'}
+  {name: 'Max', email: 'max@mail.ru' },
+  {name: 'Adam', email: 'adam@mail.com' }
 ])
 
 categories = Category.create! ([
@@ -23,30 +23,30 @@ categories = Category.create! ([
   ])
 
 tests = Test.create! ([
-  { title: 'UFC Light weight', level: 0, category_id: categories[0], author_id: users[0] },
-  { title: 'UFC Light heavyweight', level: 1, category_id: categories[1], author_id: users[1] },
-  { title: 'UFC Heavyweight', level: 2, category_id: categories[2], author_id: users[0] }
+  { title: 'UFC Light weight', level: 0, category: categories[0], author: users[0] },
+  { title: 'UFC Light heavyweight', level: 1, category: categories[1], author: users[1] },
+  { title: 'UFC Heavyweight', level: 2, category: categories[2], author: users[0] }
   ])
 
 Result.create! ([
-  { user_id: users[0], test_id: tests[0] },
-  { user_id: users[1], test_id: tests[1] }
+  { user: users[0], test: tests[0] },
+  { user: users[1], test: tests[1] }
   ])
 
 questions = Question.create! ([
-  { body: 'Who is the UFC light weight champion?', test_id: tests[0] },
-  { body: 'Who is the UFC light heavyweight champion?', test_id: tests[1] },
-  { body: 'Who is the UFC Heavyweight champion?', test_id: tests[2] }
+  { body: 'Who is the UFC light weight champion?', test: tests[0] },
+  { body: 'Who is the UFC light heavyweight champion?', test: tests[1] },
+  { body: 'Who is the UFC Heavyweight champion?', test: tests[2] }
   ])
 
 Answer.create! ([
-  {body: 'Dustin Poirier', question_id: questions [0] },
-  {body: 'Justin Gaethje', question_id: questions [0] },
-  {body: 'Charles Oliveira', question_id: questions [0], correct: true },
-  {body: 'Jan Blachowicz', question_id: questions [1], correct: true },
-  {body: 'Thiago Santos', question_id: questions [1] },
-  {body: 'Glover Teixeira', question_id: questions [1] },
-  {body: 'Stipe Miocic', question_id: questions [2] },
-  {body: 'Derrick Lewis', question_id: questions [2] },
-  {body: 'Francis Ngannou', question_id: questions [2], correct: true }
+  {body: 'Dustin Poirier', question: questions [0] },
+  {body: 'Justin Gaethje', question: questions [0] },
+  {body: 'Charles Oliveira', question: questions [0], correct: true },
+  {body: 'Jan Blachowicz', question: questions [1], correct: true },
+  {body: 'Thiago Santos', question: questions [1] },
+  {body: 'Glover Teixeira', question: questions [1] },
+  {body: 'Stipe Miocic', question: questions [2] },
+  {body: 'Derrick Lewis', question: questions [2] },
+  {body: 'Francis Ngannou', question: questions [2], correct: true }
   ])
