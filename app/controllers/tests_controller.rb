@@ -1,7 +1,6 @@
 class TestsController < ApplicationController
   def index
-    buyebug
-
-    render plain: 'All tests'
+    logger.info(self.object_id)
+    render json: {tests: Test.all}
   end
 end
