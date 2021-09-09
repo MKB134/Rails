@@ -1,11 +1,11 @@
 <h1>Create New Question</h1>
 
-<form action="/tests/<%= test.id %>/questions" method="post">
+<form action="/tests/<%= @test.id %>/questions" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
   <p>
-    <label for="question-body">Body:</label>
-    <input type="text" name="test[title]" id="test-title">
+    <label for="question-body">Question:</label>
+    <input type="text" name="question[body]" id="question-bode">
   </p><br>
 
   <input type="submit" value="Create">
