@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: %i[ index create new ]
-  before_action :find_question, only: %i[ show  destroy]
+  before_action :find_test, only: %i[index create new]
+  before_action :find_question, only: %i[show  destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -13,9 +13,7 @@ class QuestionsController < ApplicationController
     render json: @question
   end
 
-  def new
-
-  end
+  def new; end
 
   def destroy
     @question.destroy
@@ -24,7 +22,11 @@ class QuestionsController < ApplicationController
 
   def create
     @question = @test.questions.create(question_params)
-      render plain: @question.inspect
+    if @question.save
+      redirect_to @question
+    else
+      render :new
+end
   end
 
   private
