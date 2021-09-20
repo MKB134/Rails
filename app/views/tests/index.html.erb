@@ -1,0 +1,20 @@
+<h1>Tests</h1>
+
+<p>
+<%= link_to 'New Test', new_test_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Actions</th>
+    <th>Question count</th>
+  </tr>
+
+  <%= render @tests %>
+
+  <% @tests.each do |test| %>
+
+  <% end %>
+</table>
