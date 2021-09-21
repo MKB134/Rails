@@ -6,7 +6,7 @@ class TestsController < ApplicationController
   end
 
   def show
-    @test  = Test.find(params[:id])
+    find_test
   end
 
   def new
@@ -14,11 +14,11 @@ class TestsController < ApplicationController
   end
 
   def edit
-    @test = Test.find(params[:id])
+    find_test
   end
 
   def update
-    @test = Test.find(params[:id])
+    find_test
 
     if @test.update(test_params)
       redirect_to @test
