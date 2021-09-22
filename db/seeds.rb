@@ -17,9 +17,9 @@ users = User.create! ([
 ])
 
 categories = Category.create! ([
-  { title: 'Light weight' },
-  { title: 'Light heavyweight'},
-  { title: 'Heavyweight'},
+  { title: 'Light ' },
+  { title: 'Light Heavy'},
+  { title: 'Heavy'},
   ])
 
 tests = Test.create! ([
