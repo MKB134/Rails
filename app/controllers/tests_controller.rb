@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit destroy update start]
-  before_action :find_user, only: :start
+  
   def index
     @tests = Test.all
   end
@@ -36,6 +36,7 @@ class TestsController < ApplicationController
   end
 
   def start
+    find_user
     @user.tests.push(@test)
     redirect_to @user.test_passage(@test)
   end
