@@ -1,8 +1,8 @@
 <h1>The <%= @test_passage.test.title %> Test was completed!</h1>
 <% if @test_passage.success? %>
-<h2 style="color: green">ВЫ УСПЕШНО ПРОШЛИ ТЕСТ!</h2>
+  <h2 style="color: green"> ВЫ УСПЕШНО ПРОШЛИ ТЕСТ! </h2>
 <% else %>
-  <h2 style="color: red">ВЫ НЕ ПРОШЛИ ТЕСТ</h2>
+  <h2 style="color: red"> ВЫ НЕ ПРОШЛИ ТЕСТ </h2>
 <% end %>
 
 <h3>Result: <%= @test_passage.percent %> %</h3>

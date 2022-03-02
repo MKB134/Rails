@@ -1,6 +1,6 @@
 <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
-<h3> Question  <%= @test_passage.test.questions.ids.find_index(@test_passage.current_question.id) + 1 %> /
+<h3> Question  <%= @test_passage.question_number%> /
   <%= @test_passage.test.questions.count %> </h3>
 
 <b>
