@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Answer.destroy_all
 Question.destroy_all
-Result.destroy_all
 Test.destroy_all
 User.destroy_all
 
@@ -28,10 +27,6 @@ tests = Test.create! ([
   { title: 'UFC Heavyweight', level: 2, category: categories[2], author: users[0] }
   ])
 
-Result.create! ([
-  { user: users[0], test: tests[0] },
-  { user: users[1], test: tests[1] }
-  ])
 
 questions = Question.create! ([
   { body: 'Who is the UFC light weight champion?', test: tests[0] },
