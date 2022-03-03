@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :answers
-root to: 'tests#index'
+  root to: 'tests#index'
+
+  get :signup, to: 'users#new'
+
+  resources :users, only: :create
 
   resources :tests do
     post :start, on: :member
