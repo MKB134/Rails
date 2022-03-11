@@ -1,8 +1,5 @@
 class User < ApplicationRecord
-
-  attr_reader :password
-  attr_writer :password_confirmation
-
+  
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :author, class_name: 'Test', foreign_key: 'author_id', dependent: :nullify
