@@ -1,13 +1,12 @@
 class ApplicationController < ActionController::Base
 
   helper_method :current_user,
-                :logged_in?,
-                 :return_point
+                :logged_in?
   private
 
   def authenticate_user!
+    cookies[:original_path] = request.url
     unless current_user
-      set_return_point(request.url)
       redirect_to login_path, alert: 'Are you a Guru? Verify your Email and password please'
     end
   end
@@ -18,13 +17,5 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
-  end
-
-  def set_return_point(return_point)
-    session[:return_point] = return_point
-  end
-
-  def return_point
-    session[:return_point] || root_path
   end
 end
