@@ -37,9 +37,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    find_user
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private
@@ -51,9 +50,4 @@ class TestsController < ApplicationController
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
   end
-
-  def find_user
-    @user = User.first
-  end
-
 end
