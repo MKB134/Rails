@@ -10,8 +10,11 @@
   </head>
 
   <body>
-    <%= yield %>
-    <hr>
+    <%= render 'shared/header'%>
+    <main>
+      <% render 'shared/flash' %>
+      <%= yield %>
+    </main>
     <%= render 'shared/footer' %>
   </body>
 </html>
