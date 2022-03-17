@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     resources :answers
 
-    resources :tests do
+    resources :tests, only: :index do
       post :start, on: :member
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
@@ -16,5 +16,9 @@ Rails.application.routes.draw do
       member do
         get :result
       end
+    end
+
+    namespace :admin do
+      resources :tests
     end
   end
