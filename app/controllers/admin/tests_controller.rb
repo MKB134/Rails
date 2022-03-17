@@ -24,7 +24,7 @@ class Admin::TestsController <  Admin::BaseController
   def create
     @test = Test.new(test_params)
     if @test.save
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :new
     end
