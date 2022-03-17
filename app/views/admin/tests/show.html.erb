@@ -9,6 +9,11 @@
   <%= @test.level %>
 </p>
 
+<p>
+  <strong>Author:</strong>
+  <%= @test.author.email %>
+</p>
+
 <%= render @test.questions %>
 
 <%= link_to 'Back', admin_tests_path %>
