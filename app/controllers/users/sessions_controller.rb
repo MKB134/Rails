@@ -9,9 +9,10 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+   def create
+     super
+     flash[:notice] = "Привет, #{current_user.first_name}!"
+   end
 
   # DELETE /resource/sign_out
   # def destroy
