@@ -1,0 +1,31 @@
+ru:
+  hello: "Привет Мир"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Доступные Тесты"
+        new_test: "Новый Тест"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        queston_count: "Колличество вопросов"
+        actions:  "Действия"
+      test:
+        show_button: "Показать"
+        edit_button:  "Изменить"
+        delete_button: "Удалить"
+      edit:
+        header : "Изменить Тест %{title}"
+        back : "Назад"
+      new:
+        header: "Новый Тест"
+        back: "Назад"
+      show:
+        title: "Название"
+        level: "Уровень"
+        author: "Автор"
+        back: "Назад"
+        new_question: "Новый Вопрос"
