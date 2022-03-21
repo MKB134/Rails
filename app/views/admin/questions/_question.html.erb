@@ -1,0 +1,10 @@
+<li>
+  <strong>Question:<strong>
+  <%= question.body %><br>
+  <%= link_to 'Show', admin_question_path(question) %> |
+  <%= link_to 'Edit', edit_admin_question_path(question) %> |
+  <%= link_to 'Delete',
+              admin_question_path(question),
+              method: :delete,
+              data: { confirm: 'Are you sure' } %>
+</li>
