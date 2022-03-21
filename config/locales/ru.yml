@@ -1,6 +1,19 @@
 ru:
   hello: "Привет Мир"
 
+  tests:
+    index:
+      header: "Доступные тесты"
+      start: "Пройти"
+
+  shared:
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнаружено %{count} ошибки"
+
   admin:
     tests:
       create:

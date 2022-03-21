@@ -1,6 +1,17 @@
 en:
   hello: "Hello world"
 
+  tests:
+    index:
+      header: "Available tests"
+      start: "Start"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"      
+
   admin:
     tests:
       create:

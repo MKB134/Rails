@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def default_url_options
-    { lang: I18n.locale }
+    I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
   end
 
   private
