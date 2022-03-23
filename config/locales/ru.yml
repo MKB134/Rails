@@ -3,8 +3,15 @@ ru:
 
   tests:
     index:
-      header: "Доступные тесты"
-      start: "Пройти"
+      header: "Доступные Тесты"
+      new_test: "Новый Тест"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      queston_count: "Колличество вопросов"
+      actions:  "Действия"
+    test:
+      start: "Старт"
 
   shared:
     errors:
@@ -30,6 +37,7 @@ ru:
         show_button: "Показать"
         edit_button:  "Изменить"
         delete_button: "Удалить"
+        start_button: "Старт"
       edit:
         header : "Изменить Тест %{title}"
         back : "Назад"

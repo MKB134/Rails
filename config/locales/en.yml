@@ -10,7 +10,7 @@ en:
     errors:
       header:
         one: "%{count} error detected"
-        other: "%{count} errors detected"      
+        other: "%{count} errors detected"
 
   admin:
     tests:
@@ -28,6 +28,7 @@ en:
         show_button: "Show"
         edit_button:  "Edit"
         delete_button: "Delete"
+        start_button: "Start"
       edit:
         header: "Edit Test %{title}"
         back: "Back"

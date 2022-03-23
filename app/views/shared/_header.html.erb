@@ -1,15 +1,12 @@
-<header class="header-container">
-  <div class="col-8">
-    <h1><%= link_to 'Test-Guru', root_path %></h1>
-  </div>
-  <div class="col-4">
-    <% if user_signed_in? %>
-      <p class="nav user">
-      Welcome, <b><%= current_user.email %></b> Guru
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
-    <% else %>
-    <%= link_to 'Signup', new_user_registration_path %>
-    <%= link_to 'Login', new_user_session_path %>
-   <% end %>
-  </div>
-</header>
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'Test-Guru', root_path,  class: 'navbar-brand' %>
+  <span class="navbar-text">
+      <% if user_signed_in? %>
+        Welcome, <b><%= current_user.email %></b> Guru |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
+      <% else %>
+      <%= link_to 'Login', new_user_session_path %> |
+      <%= link_to 'Sign up', new_user_registration_path %>
+     <% end %>
+  </span>
+</nav>
