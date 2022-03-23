@@ -11,15 +11,21 @@ ru:
       queston_count: "Колличество вопросов"
       actions:  "Действия"
     test:
-      start: "Старт"
+      start_button: "Старт"
 
   shared:
+    nav:
+      logout: "Выйти"
+      login: "Войти"
+      signin: "Регистрация"
+      adminpanel: "Панель администратора"
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         other: "Обнаружено %{count} ошибки"
+
 
   admin:
     tests:
