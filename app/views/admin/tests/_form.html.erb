@@ -1,20 +1,21 @@
-<%= form_with model: [:admin, @test], local: true do |form| %>
-<%= render 'shared/errors', resource: @test %>
+  <div class="form-group">
+    <%= form_with model: [:admin, @test], local: true do |form| %>
+      <%= render 'shared/errors', resource: @test %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: :test_title %>
-  </p>
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, id: :test_title, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= form.label :level %><br>
-    <%= form.number_field :level, id: :test_level%>
-  </p>
+      <p>
+        <%= form.label :level %><br>
+        <%= form.number_field :level, id: :test_level, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, promt: true %>
-  </p>
+      <p>
+        <%= form.label :category_id %>
+        <%= form.collection_select :category_id, Category.all, :id, :title, promt: true, class: 'form-control' %>
+      </p>
 
-  <p><%= form.submit %></p>
-<% end %>
+      <p><%= form.submit class: 'btn btn-primary' %></p>
+    <% end %>

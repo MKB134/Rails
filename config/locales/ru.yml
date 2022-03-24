@@ -3,16 +3,29 @@ ru:
 
   tests:
     index:
-      header: "Доступные тесты"
-      start: "Пройти"
+      header: "Доступные Тесты"
+      new_test: "Новый Тест"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      queston_count: "Колличество вопросов"
+      actions:  "Действия"
+    test:
+      start_button: "Старт"
 
   shared:
+    nav:
+      logout: "Выйти"
+      login: "Войти"
+      signin: "Регистрация"
+      adminpanel: "Панель администратора"
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         other: "Обнаружено %{count} ошибки"
+
 
   admin:
     tests:
@@ -30,6 +43,7 @@ ru:
         show_button: "Показать"
         edit_button:  "Изменить"
         delete_button: "Удалить"
+        start_button: "Старт"
       edit:
         header : "Изменить Тест %{title}"
         back : "Назад"
