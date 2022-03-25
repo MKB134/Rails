@@ -13,6 +13,13 @@ ru:
     test:
       start_button: "Старт"
 
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+    gist:
+      success: "Gist успешно создан!"
+      failure: "Во время сохранения Gist произошла ошибка!"
+
   shared:
     nav:
       logout: "Выйти"

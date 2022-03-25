@@ -12,6 +12,13 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
+  test_passages:
+    result:
+      header: "The %{title} Test was completed!"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist!"
+
   admin:
     tests:
       create:
