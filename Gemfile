@@ -28,7 +28,7 @@ gem 'devise', '~>4.0'
 # gem 'image_processing', '~> 1.2'
 
 #NETWORKING
-gem 'faraday'
+gem "octokit", "~> 4.0"
 
 #Localization
 gem 'rails-i18n'
