@@ -30,6 +30,9 @@ gem 'devise', '~>4.0'
 #NETWORKING
 gem "octokit", "~> 4.0"
 
+#ENV
+gem 'dotenv-rails'
+
 #Localization
 gem 'rails-i18n'
 
