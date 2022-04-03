@@ -31,7 +31,7 @@ gem 'devise', '~>4.0'
 gem "octokit", "~> 4.0"
 
 #ENV
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
 
 #Localization
 gem 'rails-i18n'
