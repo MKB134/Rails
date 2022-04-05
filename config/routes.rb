@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
-  resources :gists do
+  resources :gists, only: :new do
     member do
       post :create
     end
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :gists
+    resources :gists, only: :index
     resources :tests do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
