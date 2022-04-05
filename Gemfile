@@ -22,9 +22,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 #gem 'bcrypt', '~> 3.1.7'
 #AUTH
+
 gem 'devise', '~>4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+#NETWORKING
+gem "octokit", "~> 4.0"
+
+#ENV
+gem 'dotenv-rails', groups: [:development, :test]
 
 #Localization
 gem 'rails-i18n'

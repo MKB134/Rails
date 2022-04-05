@@ -1,6 +1,6 @@
 ru:
-  hello: "Привет Мир"
 
+  gist_description: 'Вопрос о %{title}, из TestGuru'
   tests:
     index:
       header: "Доступные Тесты"
@@ -12,6 +12,15 @@ ru:
       actions:  "Действия"
     test:
       start_button: "Старт"
+
+  gists:
+    gist: "Gist"
+    success: "Gist успешно создан!"
+    failure: "Во время сохранения Gist произошла ошибка!"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
 
   shared:
     nav:
@@ -28,6 +37,12 @@ ru:
 
 
   admin:
+    gists:
+      index:
+        header: "All Gists"
+        question: "Question"
+        gist_url: "Gist link"
+        email: "Email"
     tests:
       create:
         success: "Тест успешно создан"

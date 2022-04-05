@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
+  resources :gists, only: :new do
+    member do
+      post :create
+    end
+  end
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
@@ -17,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :gists, only: :index
     resources :tests do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index

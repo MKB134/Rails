@@ -1,6 +1,6 @@
 en:
-  hello: "Hello world"
 
+  gist_description: 'A question about %{title} from TestGuru'
   tests:
     index:
       header: "Available tests"
@@ -11,6 +11,14 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+
+  test_passages:
+    result:
+      header: "The %{title} Test was completed!"
+    gist:
+      gist: "Gist"
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist!"
 
   admin:
     tests:
