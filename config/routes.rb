@@ -10,10 +10,15 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
+  resources :gists do
+    member do
+      post :create
+    end
+  end
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
-      post :gist
     end
   end
 

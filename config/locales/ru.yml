@@ -13,13 +13,14 @@ ru:
     test:
       start_button: "Старт"
 
+  gists:
+    gist: "Gist"
+    success: "Gist успешно создан!"
+    failure: "Во время сохранения Gist произошла ошибка!"
+
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
-    gist:
-      gist: "Gist"
-      success: "Gist успешно создан!"
-      failure: "Во время сохранения Gist произошла ошибка!"
 
   shared:
     nav:
@@ -33,7 +34,7 @@ ru:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         other: "Обнаружено %{count} ошибки"
-  
+
 
   admin:
     gists:

@@ -1,7 +1,7 @@
 class GistsController < ApplicationController
 
   def create
-    test_passage = TestPassage.find(params[:id])
+    @test_passage = TestPassage.find(params[:id])
     result = GistQuestionService.new(@test_passage.current_question).call
 
     if result.success?
