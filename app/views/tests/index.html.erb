@@ -1,14 +1,16 @@
 <h1><%= t('.header')%></h1>
 
-<table class="table table-hover">
+<table class="table">
   <thead class="thead">
-    <tr>
-      <th><%=t('.title')%></th>
+    <th class="sort-by-title pointer">
+      <%= t('.title')%>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
       <th><%=t('.level')%></th>
       <th><%=t('.category')%></th>
       <th><%=t('.queston_count')%></th>
       <th colspan="3"><%=t('.actions')%></th>
-    </tr>
   </thead>
   <tbody>
     <%= render @tests %>
