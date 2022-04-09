@@ -1,56 +1,36 @@
-document.addEventListener('turbolinks:load', function() {
-  var control = document.querySelector('.sort-by-title')
+class Sorting {
+  constructor(control){
+    this.control = control
+    this.setup()
+  }
 
-  if (control) { control.addEventListener('click', sortRowsByTitle) }
+  setup(){
+    this.control.addEventListener('click', this.sortRowsByTitle)
+  }
+
+  sortRowsByTitle() {
+    const table = this.offsetParent
+    const arrowUp = this.querySelector('.octicon-arrow-up')
+    const arrowDown = this.querySelector('.octicon-arrow-down')
+    const sortedRows = Array.from(table.rows).slice(1)
+
+    if (arrowUp.classList.contains('hide')) {
+      sortedRows.sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1)
+      arrowUp.classList.remove('hide')
+      arrowDown.classList.add('hide')
+    }
+    else {
+      sortedRows.sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? -1 : 1)
+      arrowUp.classList.add('hide')
+      arrowDown.classList.remove('hide')
+    }
+
+    table.tBodies[0].append(...sortedRows)
+  }
+}
+
+document.addEventListener('turbolinks:load', function () {
+  const control = document.querySelector('.sort-by-title')
+
+  if (control) new Sorting(control)
 })
-
-function sortRowsByTitle() {
-  var table = document.querySelector('table')
-  //Nodelist
-  var rows = table.querySelectorAll('tr')
-  var sortedRows = []
-
-  // select all table rows except the first one which is the header
-  for (var i = 1; i < rows.length; i++) {
-    sortedRows.push(rows[i])
-  }
-  
-  if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
-    sortedRows.sort(compareRowsAsc)
-    this.querySelector('.octicon-arrow-up').classList.remove('hide')
-    this.querySelector('.octicon-arrow-down').classList.add('hide')
-  } else {
-    sortedRows.sort(compareRowsDesc)
-    this.querySelector('.octicon-arrow-down').classList.remove('hide')
-    this.querySelector('.octicon-arrow-up').classList.add('hide')
-  }
-
-  var sortedTable = document.createElement('table')
-
-  sortedTable.classList.add('table')
-  sortedTable.appendChild(rows[0])
-
-  for (var i = 0; i < sortedRows.length; i++ ) {
-    sortedTable.appendChild(sortedRows[i])
-  }
-
-  table.parentNode.replaceChild(sortedTable, table)
-}
-
-function compareRowsAsc(row1, row2) {
-  var testTitle1 = row1.querySelector('td').textContent
-  var testTitle2 = row2.querySelector('td').textContent
-
-  if (testTitle1 < testTitle2) {return -1 }
-  if (testTitle1 > testTitle2) {return 1 }
-  return 0
-}
-
-function compareRowsDesc(row1, row2) {
-  var testTitle1 = row1.querySelector('td').textContent
-  var testTitle2 = row2.querySelector('td').textContent
-
-  if (testTitle1 < testTitle2) {return 1 }
-  if (testTitle1 > testTitle2) {return -1 }
-  return 0
-}
