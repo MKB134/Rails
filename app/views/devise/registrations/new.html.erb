@@ -1,6 +1,6 @@
 <h2><%= t('.sign_up') %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name),:html => {:id => "user-registration"}) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:id => "user-registration"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -26,13 +26,15 @@
     <%= f.password_field :password, autocomplete: "new-password", id: "user_password" %>
   </div>
 
-  <div class="field">
+  <div class="field confirmation">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "user_password_confirm" %>
+    <%= octicon 'check', class: 'text-success hide' %>
+    <%= octicon 'x', class: 'text-danger hide' %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('.sign_up') %>
+    <%= f.submit t('.sign_up')  %>
   </div>
 <% end %>
 

@@ -6,21 +6,16 @@ export class PasswordConfirmation {
     this.setup()
   }
 
-  resetStyleForInputs() {
-    this.password_confirm.classList.remove('input-green')
-  	this.password_confirm.classList.remove('input-red')
-  	this.password_confirm.parentElement.classList.remove('success')
-  	this.password_confirm.parentElement.classList.remove('error')
-  }
-
   checkPasswords() {
-  	this.resetStyleForInputs()
+    const checkIcon = document.querySelector('.confirmation .octicon-check')
+    const xIcon = document.querySelector('.confirmation .octicon-x')
+
   	if(this.password_confirm.value === this.password.value) {
-  	  this.password_confirm.classList.add('input-green')
-  	  this.password_confirm.parentElement.classList.add('success')
+  	  checkIcon.classList.remove('hide')
+      xIcon.classList.add('hide')
   	} else {
-  	  this.password_confirm.classList.add('input-red')
-  	  this.password_confirm.parentElement.classList.add('error')
+  	  checkIcon.classList.add('hide')
+  	  xIcon.classList.remove('hide')
   	}
   }
 
