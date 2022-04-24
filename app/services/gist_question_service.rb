@@ -15,7 +15,7 @@ class GistQuestionService
   private
 
   def default_client
-    Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+    Octokit::Client.new(access_token: ENV.fetch('GITHUB_TOKEN'))
   end
 
   def gist_params
@@ -33,5 +33,4 @@ class GistQuestionService
   def gist_content
     [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
-
 end
