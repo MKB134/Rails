@@ -1,8 +1,13 @@
 <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
+<h3> Question  <%= @test_passage.question_number%> /
+  <%= @test_passage.test.questions.count %> </h3>
+
 <p>
   <%= @test_passage.current_question.body %>
 </p>
+
+
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
@@ -12,13 +17,11 @@
   </p>
   <% end %>
 
-  <div class="progress">
-    <% content_tag :div, '',
-       class: 'progress-bar',
-       data: {
-         question_number: @test_passage.question_number,
-         question_count: @test_passage.test.questions.count } %>
-  </div>
+<div class="progress">
+  <%= tag.div class: "progress-bar", id: 'test-progress',
+              data: { question_number: @test_passage.question_number,
+                      question_count: @test_passage.test.questions.count } %>
+</div>
 
   <p><%= link_to 'Gist Question', gist_path(@test_passage), method: :post %></p>
   <p><%= form.submit 'Next' %></p>
