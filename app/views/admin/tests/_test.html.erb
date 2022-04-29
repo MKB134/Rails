@@ -1,4 +1,5 @@
 <tr>
+<<<<<<< HEAD
   <td class="align-middle">
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
@@ -14,6 +15,16 @@
                     class: 'form-inline-link' %>
   </td>
   <td class="align-middle">
+=======
+  <td><%= test.title %></td>
+  <td><%= test.level %></td>
+  <td><%= test.category.title %></td>
+  <td><%= test.questions.count %></td>
+  <td><%= button_to t('.start_button'), start_test_path(test), class: 'btn btn-primary' %></td>
+  <td><%= link_to t('.show_button'), admin_test_path(test), class: 'btn btn-secondary' %></td>
+  <td><%= link_to t('.edit_button'), edit_admin_test_path(test),class: 'btn btn-info' %></td>
+  <td>
+>>>>>>> master
     <%= link_to t('.delete_button'),
         admin_test_path(test),
         method: :delete,
