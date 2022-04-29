@@ -1,5 +1,4 @@
 <tr>
-<<<<<<< HEAD
   <td><%= test.title %></td>
   <td><%= test.level %></td>
   <td><%= test.category.title %></td>
@@ -8,7 +7,6 @@
   <td><%= link_to t('.show_button'), admin_test_path(test), class: 'btn btn-secondary' %></td>
   <td><%= link_to t('.edit_button'), edit_admin_test_path(test),class: 'btn btn-info' %></td>
   <td>
-=======
   <td class="align-middle">
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
@@ -24,7 +22,6 @@
                     class: 'form-inline-link' %>
   </td>
   <td class="align-middle">
->>>>>>> add_indexes
     <%= link_to t('.delete_button'),
         admin_test_path(test),
         method: :delete,
