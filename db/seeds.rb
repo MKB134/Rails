@@ -5,43 +5,46 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Answer.destroy_all
-Question.destroy_all
-Test.destroy_all
-User.destroy_all
-
-users = User.create! ([
-  {name: 'Max', email: 'max@mail.ru' },
-  {name: 'Adam', email: 'adam@mail.com' }
+users = User.create!([
+  { first_name: 'Maxim', last_name: 'Maximov', email: 'maxim@mail.ru', password: '123456'},
+  { first_name: 'Fedor', last_name: 'Fedorov', email: 'fedor@mail.ru', password: '123456' }
 ])
 
-categories = Category.create! ([
-  { title: 'Light ' },
-  { title: 'Light Heavy'},
-  { title: 'Heavy'},
-  ])
+categories = Category.create!([
+  { title: 'Астрономия' },
+  { title: 'Спорт' },
+  { title: 'Математика' }
+])
 
-tests = Test.create! ([
-  { title: 'UFC Light weight', level: 0, category: categories[0], author: users[0] },
-  { title: 'UFC Light heavyweight', level: 1, category: categories[1], author: users[1] },
-  { title: 'UFC Heavyweight', level: 2, category: categories[2], author: users[0] }
-  ])
+tests = Test.create!([
+  { title: 'Планеты солнечной системы', level: 0, category: categories[0], author: users[0] },
+  { title: 'Футбол', level: 1, category: categories[1], author: users[0] },
+  { title: 'Сложение чисел', level: 0, category: categories[2], author: users[0] },
+  { title: 'Футбол', level: 3, category: categories[1], author: users[0] }
+])
 
+questions = Question.create!([
+  { body: 'Какая первая планета от Солнца?', test: tests[0] },
+  { body: 'Сколько будет 2+2?', test: tests[2] },
+  { body: 'Сколько будет 3+3?', test: tests[2] },
+  { body: 'Сколько человек играет в футбольной команде?', test: tests[1] },
+  { body: 'Можно ли брать мяч в руки полевому игроку?', test: tests[1] }
+])
 
-questions = Question.create! ([
-  { body: 'Who is the UFC light weight champion?', test: tests[0] },
-  { body: 'Who is the UFC light heavyweight champion?', test: tests[1] },
-  { body: 'Who is the UFC Heavyweight champion?', test: tests[2] }
-  ])
-
-Answer.create! ([
-  {body: 'Dustin Poirier', question: questions [0] },
-  {body: 'Justin Gaethje', question: questions [0] },
-  {body: 'Charles Oliveira', question: questions [0], correct: true },
-  {body: 'Jan Blachowicz', question: questions [1], correct: true },
-  {body: 'Thiago Santos', question: questions [1] },
-  {body: 'Glover Teixeira', question: questions [1] },
-  {body: 'Stipe Miocic', question: questions [2] },
-  {body: 'Derrick Lewis', question: questions [2] },
-  {body: 'Francis Ngannou', question: questions [2], correct: true }
-  ])
+Answer.create!([
+  { body: 'Земля', question: questions[0] },
+  { body: 'Меркурий', question: questions[0], correct: true },
+  { body: 'Марс', question: questions[0] },
+  { body: '3', question: questions[1] },
+  { body: '5', question: questions[1] },
+  { body: '4', question: questions[1], correct: true },
+  { body: '6', question: questions[2], correct: true },
+  { body: '7', question: questions[2] },
+  { body: '8', question: questions[2] },
+  { body: '10', question: questions[3] },
+  { body: '11', question: questions[3], correct: true },
+  { body: '12', question: questions[3] },
+  { body: 'Можно', question: questions[4] },
+  { body: 'Можно, только при вводе мяча из аута', question: questions[4], correct: true },
+  { body: 'Нельзя', question: questions[4] }
+])
