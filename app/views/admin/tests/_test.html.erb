@@ -5,7 +5,7 @@
   </td>
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.questions.count %></td>
-  <td class="align-middle"><%= link_to t('.start_button'), start_test_path(test), class: 'btn btn-primary' %></td>
+  <td class="align-middle"><%= link_to t('.start_button'), start_test_path(test), method: :post, class: 'btn btn-primary' %></td>
   <td class="align-middle"><%= link_to t('.show_button'), admin_test_path(test), class: 'btn btn-secondary' %></td>
   <td class="align-middle">
     <%= link_to t('.edit_button'),
