@@ -35,8 +35,6 @@ ru:
         many: "Обнаружено %{count} ошибок"
         other: "Обнаружено %{count} ошибки"
 
-
-
   admin:
     gists:
       index:
