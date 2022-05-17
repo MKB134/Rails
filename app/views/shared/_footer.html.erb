@@ -1,4 +1,9 @@
 <footer class='footer-container'>
+  <% if current_user %>
+  <p>
+    <%= link_to 'Feedback', new_feedback_path %>
+  </p>
+<% end %>
   <div class='col-8'>
     <%= current_year %>  By Murad Gadzhiev.<%= github_url("RubyRockstar", "Rails") %>.
   </div>
