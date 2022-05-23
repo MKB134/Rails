@@ -4,6 +4,9 @@
   </div>
   <div class="col-4">
     <% if user_signed_in? %>
+      <% if current_user.is_a?(Admin) %>
+        <%= link_to t('.adminpanel'), admin_tests_path %>
+      <% end %>
       <p class="nav user">
       Welcome, <b><%= current_user.email %></b> Guru
       <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>

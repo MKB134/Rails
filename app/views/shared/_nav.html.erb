@@ -1,7 +1,4 @@
 <nav class="navbar navbar-light bg-light">
-  <% if current_user.is_a?(Admin) %>
-    <%= link_to t('.adminpanel'), admin_tests_path %>
-  <% end %>
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
 
   <span class="navbar-text">
@@ -13,4 +10,4 @@
       <%= link_to t('.signin'), new_registration_path(resource_name) %>
     <% end %>
   </span>
-</nav>  
+</nav>
