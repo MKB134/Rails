@@ -11,10 +11,23 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    footer:
+      feedback: "Feedback"
+    header:
+      welcome: "Welcome пожаловать %{user} Guru"
+      signup: "Signup"
+      login: "Login"
+      logout: "Exit"
 
   test_passages:
     result:
-      header: "The %{title} Test was completed!"
+      completed_test: "The %{title} Test was completed!"
+      back: "Back"
+      result: "Result:"
+    show:
+      question: "question %{q_number}/%{q_count}"
+      gist_question: "Gist Question"
+      next: 'Next'
     gist:
       gist: "Gist"
       success: "Gist was successfully created!"

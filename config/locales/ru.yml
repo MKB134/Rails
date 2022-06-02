@@ -20,13 +20,18 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен!"
+      completed_test: "Тест %{title} успешно завершен!"
+      back: "Назад"
+      result: "Результат: %{res}"
+    show:
+       question: "вопрос %{q_number}/%{q_count}"
+       gist_question: "Отправить на гист"
+       next: 'Далее'
 
   shared:
     nav:
       logout: "Выйти"
       login: "Войти"
-      signin: "Регистрация"
       adminpanel: "Панель администратора"
     errors:
       header:
@@ -34,6 +39,13 @@ ru:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         other: "Обнаружено %{count} ошибки"
+    footer:
+      feedback: "Обратная связь"
+    header:
+      welcome: "Добро пожаловать %{user} Гуру"
+      signup: "Регистрация"
+      login: "Войти"
+      logout: "Выход"
 
   admin:
     gists:

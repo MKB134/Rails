@@ -8,11 +8,11 @@
         <%= link_to t('.adminpanel'), admin_tests_path %>
       <% end %>
       <p class="nav user">
-      Welcome, <b><%= current_user.email %></b> Guru
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
+      <b><%= t('.welcome', user: current_user.email) %></b>
+      <%= link_to t('.logout'), destroy_user_session_path, method: :delete  %>
     <% else %>
-    <%= link_to 'Signup', new_user_registration_path %>
-    <%= link_to 'Login', new_user_session_path %>
+    <%= link_to t('.signup'), new_user_registration_path %>
+    <%= link_to t('.login'), new_user_session_path %>
    <% end %>
   </div>
 </header>

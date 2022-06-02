@@ -1,7 +1,6 @@
-<h1>Passing the <%= @test_passage.test.title %> Test</h1>
+<h1><%= @test_passage.test.title %> Test</h1>
 
-<h3> Question  <%= @test_passage.question_number%> /
-  <%= @test_passage.test.questions.count %> </h3>
+<h3><%= t('.question', q_number: @test_passage.question_number, q_count: @test_passage.test.questions.count) %> </h3>
 
 <p>
   <%= @test_passage.current_question.body %>
@@ -23,6 +22,6 @@
                       question_count: @test_passage.test.questions.count } %>
 </div>
 
-  <p><%= link_to 'Gist Question', gist_path(@test_passage), method: :post %></p>
-  <p><%= form.submit 'Next' %></p>
+  <p><%= link_to t('.gist_question'), gist_path(@test_passage), method: :post %></p>
+  <p><%= form.submit t('.next') %></p>
 <% end %>
