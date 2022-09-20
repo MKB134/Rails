@@ -47,6 +47,9 @@ en:
         edit: "Edit"
         delete: "Delete"
     questions:
+      new:
+        header: "Create new question"
+        back: "Back"
       question:
         show: "Show"
         edit: "Edit"

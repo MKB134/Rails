@@ -61,6 +61,9 @@ ru:
         edit: "Изменить"
         delete: "Удалить"
     questions:
+      new:
+        header: "Создать новый вопрос"
+        back: "Назад"
       edit:
         back: "Назад"
       question:
