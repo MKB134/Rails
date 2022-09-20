@@ -49,13 +49,20 @@ ru:
 
   admin:
     answers:
+      new:
+        back: "Назад"
+      edit:
+        show: "Показать"
+        back: "Назад"
+      show:
+        back: "Назад"
       answer:
         show: "Показать"
         edit: "Изменить"
         delete: "Удалить"
     questions:
       edit:
-        back: "Назад" 
+        back: "Назад"
       question:
         show: "Показать"
         edit: "Изменить"

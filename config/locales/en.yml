@@ -35,6 +35,13 @@ en:
 
   admin:
     answers:
+      new:
+        back: "Back"
+      edit:
+        show: "Show"
+        back: "Back"
+      show:
+        back: "Back"
       answer:
         show: "Show"
         edit: "Edit"
