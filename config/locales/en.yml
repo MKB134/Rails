@@ -34,6 +34,20 @@ en:
       failure: "An error occurred while saving gist!"
 
   admin:
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        New_answer: "New answer"
+        edit: "Edit"
+        back: "Back"
     tests:
       form_inline:
         submit: "Ok"

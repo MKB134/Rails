@@ -48,6 +48,22 @@ ru:
       logout: "Выход"
 
   admin:
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+    questions:
+      edit:
+        back: "Назад" 
+      question:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+      show:
+        New_answer: "Новый ответ"
+        edit: "Изменить"
+        back: "Назад"
     gists:
       index:
         header: "All Gists"
