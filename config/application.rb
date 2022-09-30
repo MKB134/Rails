@@ -9,10 +9,13 @@ if ['development', 'test'].include? ENV['RAILS_ENV']
   Dotenv::Railtie.load
 end
 
+
 module TestGuru
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
   config.load_defaults 6.0
+
+  config.assets.initialize_on_precompile = false
 
   config.time_zone = 'Moscow'
   config.active_record.default_timezone = :local
