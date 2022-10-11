@@ -1,8 +1,8 @@
 class FeedbacksMailer < ApplicationMailer
   def feedback_message(body, user)
     @body = body
-    @user = user
+    @from = user.email
 
-    mail to: Admin.pluck(:email)
+    Admin.all.each { |admin| mail(to: admin.email , subject: "Message from #{@from}") }
   end
 end
