@@ -1,0 +1,9 @@
+<tr>
+  <td class="align-middle" scope="row"><%= badge.title %></td>
+  <td class="align-middle"><%= badge.image_path %></td>
+  <td class="align-middle"><%= badge.rule_label %></td>
+  <td class="align-middle"><%= link_to t('show'), admin_badge_path(badge), class: 'btn btn-primary' %></td>
+  <td class="align-middle"><%= link_to t('edit'), edit_admin_badge_path(badge), class: 'btn btn-primary' %></td>
+  <td class="align-middle"><%= link_to t('destroy'), admin_badge_path(badge), method: :delete, data: {confirm: t('are_you_sure')},
+                                       class: 'btn btn-danger' %></td>
+</tr>

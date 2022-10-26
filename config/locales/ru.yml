@@ -28,6 +28,10 @@ ru:
       login: "Войти"
       signin: "Регистрация"
       adminpanel: "Панель администратора"
+      my_badges: "Мои бэйджи"
+      all_badges: "Все бэйджи"
+      admin_badges: "Управление бэйджами"
+
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
@@ -37,6 +41,23 @@ ru:
 
 
   admin:
+    badges:
+      create:
+        success: "Бэйдж был успешно создан."
+      update:
+        success: "Бэйдж был успешно отредактирован."
+      destroy:
+        success: "Бэйдж был успешно удален."
+      index:
+        header: "Бэйджи"
+        title: "Название"
+        image: "Картинка"
+        rule: "Правило"
+        new: "Добавить новый бэйдж"
+      new:
+        header: "Новый бэйдж"
+      edit:
+        header: "Редактирование бэйджа"
     gists:
       index:
         header: "All Gists"

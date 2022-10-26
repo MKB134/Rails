@@ -11,6 +11,14 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      logout: "Выйти"
+      login: "Войти"
+      signin: "Регистрация"
+      adminpanel: "Панель администратора"
+      my_badges: "Мои бэйджи"
+      all_badges: "Все бэйджи"
+      admin_badges: "Управление бэйджами"
 
   test_passages:
     result:
@@ -19,8 +27,25 @@ en:
       gist: "Gist"
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist!"
-
+      
   admin:
+    badges:
+      create:
+        success: "Badge was successfully created."
+      update:
+        success: "Badge was successfully updated."
+      destroy:
+        success: "Badge was successfully destroyed."
+      index:
+        header: "Badges"
+        title: "Title"
+        image: "Image"
+        rule: "Rule"
+        new: "New Badge"
+      new:
+        header: "New Badge"
+      edit:
+        header: "Editing Badge"
     tests:
       form_inline:
         submit: "Ok"

@@ -1,5 +1,6 @@
 <nav class="navbar navbar-light bg-light">
   <% if current_user.is_a?(Admin) %>
+    <%= link_to t('.admin_badges'), admin_badges_path, class: 'nav-item nav-link' %>
     <%= link_to t('.adminpanel'), admin_tests_path %>
   <% end %>
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
@@ -7,10 +8,12 @@
   <span class="navbar-text">
     <% if user_signed_in? %>
       Welcome, <b><%= current_user.email %></b> Guru |
+      <%= link_to t('.my_badges'), my_badges_path, class: 'nav-item nav-link' %>
+      <%= link_to t('.all_badges'), badges_path, class: 'nav-item nav-link' %>
       <%= link_to link_to t('.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t('.login'), new_session_path(resource_name) %> |
       <%= link_to t('.signin'), new_registration_path(resource_name) %>
     <% end %>
   </span>
-</nav>  
+</nav>
