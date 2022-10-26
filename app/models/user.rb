@@ -8,10 +8,12 @@ class User < ApplicationRecord
          :confirmable,
          :validatable
 
+  has_many :gists, dependent: :nullify
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
+  has_many :test_passages_badges, through: :test_passages
+  has_many :badges, through: :test_passages_badges
   has_many :author, class_name: 'Test', foreign_key: 'author_id', dependent: :nullify
-  has_many :gists
 
   def show_passed_by_level(level)
     tests.where(level: level)
@@ -19,5 +21,10 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  def passed_tests?(test_ids)
+    passed_test_ids = test_passages.where(test_id: test_ids).select(&:success?).map(&:test_id)
+    test_ids.uniq.sort == passed_test_ids.uniq.sort
   end
 end

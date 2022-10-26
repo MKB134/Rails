@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+      <strong><%= t('activerecord.attributes.badge.title') %>:</strong>
+      <%= @badge.title %>
+    </p>
+
+    <p class="card-text">
+      <strong><%= t('activerecord.attributes.badge.image_path') %>:</strong>
+      <%= @badge.image_path %>
+    </p>
+
+    <p class="card-text">
+      <strong><%= t('activerecord.attributes.badge.rule') %>:</strong>
+      <%= @badge.rule_label %>
+    </p>
+
+    <p class="card-text">
+      <strong><%= t('activerecord.attributes.badge.value') %>:</strong>
+      <%= @badge.value %>
+    </p>
+  </div>
+</div>
+
+<%= link_to t('edit'), edit_admin_badge_path(@badge) %> |
+<%= link_to t('back'), admin_badges_path %>
