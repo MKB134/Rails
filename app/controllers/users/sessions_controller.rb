@@ -9,7 +9,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-   def create
+   def create 
      super
      flash[:notice] = "Привет, #{current_user.first_name}!"
    end

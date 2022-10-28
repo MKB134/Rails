@@ -1,0 +1,15 @@
+<h2>Обратная связь</h2>
+
+  <%= form_tag( feedback_path ) do %>
+  	<div class="form-group">
+  <div class='col col-md-5'>
+
+  	<label class="form-label">
+  	  <%= label_tag :body, 'Текст сообщения' %>
+  	  <%= text_area_tag :body, '', rows: 3, cols: 70 %>
+  	</label>
+
+  	<p><%= submit_tag 'Отправить', class: "btn btn-primary" %></p>
+  <% end %>
+
+</div>
