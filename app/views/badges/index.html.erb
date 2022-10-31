@@ -1,0 +1,13 @@
+<h1><%= t('admin.badges.index.header') %></h1>
+
+<table class="table table-striped table-borderless">
+  <thead>
+  <tr>
+    <th scope="col"><%= t('admin.badges.index.title') %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render @badges %>
+  </tbody>
+</table>
