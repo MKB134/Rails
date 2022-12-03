@@ -1,9 +1,10 @@
 module Rules
-  class RuleOneByAttemptsSpecification < AbstractRuleSpecification
-    def first_attempt_rule(badge)
-      return unless TestPassage.where(user_id: @user.id, test_id: @test.id).count == 1
+  class TestFirstPassage < AllRules
+    def match?
+      return false unless @test_passage.successful
 
-      @test_passage.badges << badge
+      test_passage = TestPassage.successful.where(user: @user)
+      test_passage.count == 1
     end
   end
 end

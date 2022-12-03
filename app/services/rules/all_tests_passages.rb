@@ -1,6 +1,6 @@
 module Rules
-  class RuleAllByLevelSpecification < AbstractRuleSpecification
-    def level_rule(badge)
+  class AllTestsPassages < AllRules
+    def match?
       value = badge.value.to_i
 
       return if value != @test.level

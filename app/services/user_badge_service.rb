@@ -1,19 +1,23 @@
 class UserBadgeService
-  def initialize(test_passage)
-    @test_passage = test_passage
-    @user = test_passage.user
-    @test = test_passage.test
+  RULES = {
+    all_tests_from_category: 'AllTestsFromCategory',
+    all_tests_passages: 'AllTestsPassages',
+    test_first_passage: 'TestFirstPassage'
+  }.freeze
 
-    assign_badges
-  end
+  class << self
+    def call(test_passage)
+      @test_passage = test_passage
+      Badge.find_each do |badge|
+        rule = call_badge_rule(badge)
+        @test_passage.user.badges.push(badge) if rule.match?
+      end
+    end
 
-  private
+    private
 
-  def assign_badges
-    return unless @test_passage.success?
-
-    Badge.all.each do |badge|
-      send(badge.rule_name, badge)
+    def call_badge_rule(badge)
+      "Rules::#{RULES[badge.value.to_sym]}".constantize.new(rule: badge.rule, test_passage: @test_passage)
     end
   end
 end
