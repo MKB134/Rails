@@ -17,7 +17,7 @@ class UserBadgeService
     private
 
     def call_badge_rule(badge)
-      "Rules::#{RULES[badge.value.to_sym]}".constantize.new(rule_options: badge.rule_options, test_passage: @test_passage)
+      "Rules::#{RULES[badge.rule.to_sym]}".constantize.new(rule_options: badge.rule_options, test_passage: @test_passage)
     end
   end
 end

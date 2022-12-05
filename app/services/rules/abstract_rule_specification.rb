@@ -1,5 +1,5 @@
 module Rules
-  class AllRules
+  class AbstractRuleSpecification
     def initialize(rule_options:, test_passage:)
       @rule_options = rule_options
       @test_passage = test_passage
