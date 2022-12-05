@@ -1,3 +1,49 @@
-<tr>
-  <td class="align-middle" scope="row"><%= badge.title %></td>
-</tr>
+<%= form_with(model: [:admin, badge], local: true) do |form| %>
+  <% if badge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('.prohibited') %></h2>
+
+      <ul>
+        <% badge.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label t('.title') %>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :image, class: "form-label" %>
+  <div class="row">
+    <% 3.times do |i| %>
+      <div class="col-2 mb-3">
+        <%= image_tag "badges/#{i}.svg", width: "70" %>
+        <div class="text-center"><%= i %></div>
+      </div>
+    <% end %>
+  </div>
+  <%= form.number_field :image,  class: 'form-control form-control-sm',
+                        placeholder: t('.choose_image'),
+                        min: 0, max: 2, required: true %>
+  </p>
+
+  <p>
+    <%= form.label t('.rule') %>
+    <%= form.select :rule, Badge.rules.keys, include_blank: t('.select_rule') %>
+  </p>
+
+  <p>
+  <div class="field category">
+    <%= form.label t('.rule_options') %>
+    <%= form.collection_select :rule_options, Category.all, :id, :title, prompt: true %>
+  </div>
+  </p>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

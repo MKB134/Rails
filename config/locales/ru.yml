@@ -38,26 +38,47 @@ ru:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         other: "Обнаружено %{count} ошибки"
+  badges:
+    index:
+      badges: "Бейджи"
+      badge: "Бейдж"
+      title: "Название"
+      back: "Назад"
 
 
   admin:
     badges:
-      create:
-        success: "Бэйдж был успешно создан."
-      update:
-        success: "Бэйдж был успешно отредактирован."
-      destroy:
-        success: "Бэйдж был успешно удален."
+      form:
+        prohibited: "Не сохранен"
+        title: "Название"
+        choose_image: "Выбор картинки"
+        rule: "Правило"
+        select_rule: "Выбрать правило"
+        rule_options: "Опции правила"
+      edit:
+        edit_badge: "Изменить бейдж"
+        show: "Показать"
+        back: "Назад"
       index:
-        header: "Бэйджи"
+        badges: "Бейджи"
+        title: "Название"
+        badge: "Бейдж"
+        actions: "Действия"
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        sure: "Уверены ?"
+        new_badge: "Новый бейдж"
+        back: "Назад"
+      new:
+        new_badge: "Новый бейдж"
+        back: "Назад"
+      show:
         title: "Название"
         image: "Картинка"
         rule: "Правило"
-        new: "Добавить новый бэйдж"
-      new:
-        header: "Новый бэйдж"
-      edit:
-        header: "Редактирование бэйджа"
+        edit: "Редактировать"
+        back: "Назад"
     gists:
       index:
         header: "All Gists"

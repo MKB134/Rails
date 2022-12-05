@@ -1,30 +1,50 @@
+
 <%= form_with(model: [:admin, badge], local: true) do |form| %>
-  <%= render 'shared/errors', resource: badge %>
+  <% if badge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('.prohibited') %></h2>
 
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
-  </div>
+      <ul>
+        <% badge.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="form-group">
-    <%= form.label :image_path %>
-    <%= form.text_field :image_path, class: 'form-control' %>
-  </div>
+  <p>
+    <%= form.label t('.title') %>
+    <%= form.text_field :title %>
+  </p>
 
-  <div class="form-group">
-    <%= form.label :rule %>
-    <%= form.collection_radio_buttons(:rule, Badge::Rule.all, :id, :label) do |rb| %>
-      <div class="form-check">
-        <%= rb.radio_button(class: "form-check-input") %>
-        <%= rb.label(class: "form-check-label") %>
+  <p>
+    <%= form.label :image, class: "form-label" %>
+  <div class="row">
+    <% 3.times do |i| %>
+      <div class="col-2 mb-3">
+        <%= image_tag "badges/#{i}.svg", width: "70" %>
+        <div class="text-center"><%= i %></div>
       </div>
     <% end %>
   </div>
+  <%= form.number_field :image,  class: 'form-control form-control-sm',
+                        placeholder: t('.choose_image'),
+                        min: 0, max: 2, required: true %>
+  </p>
 
-  <div class="form-group">
-    <%= form.label :value %>
-    <%= form.text_field :value, class: 'form-control' %>
+  <p>
+    <%= form.label t('.rule') %>
+    <%= form.select :rule, Badge.rules.keys, include_blank: t('.select_rule') %>
+  </p>
+
+  <p>
+  <div class="field category">
+    <%= form.label t('.rule_options') %>
+    <%= form.collection_select :rule_options, Category.all, :id, :title, prompt: true %>
   </div>
+  </p>
 
-  <%= form.submit class: 'btn btn-primary' %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

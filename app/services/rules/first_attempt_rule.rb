@@ -1,5 +1,5 @@
 module Rules
-  class TestFirstPassage < AllRules
+  class TestFirstPassage < AbstractRuleSpecification
     def match?
       return false unless @test_passage.successful
 

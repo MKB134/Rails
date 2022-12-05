@@ -1,12 +1,11 @@
 module Rules
-  class AllTestsPassages < AllRules
+  class AllTestsPassages < AbstractRuleSpecification
     def match?
-      value = badge.value.to_i
+      return false unless @test_passage.successful
 
-      return if value != @test.level
-
-      test_ids = Test.with_questions.where(level: value).pluck(:id)
-      @test_passage.badges << badge if @user.passed_tests?(test_ids)
+      test_passages_ids = TestPassage.successful.where(user_id: @user.id).pluck(:test_id).uniq
+      tests_ids = Test.all.pluck(:id).sort
+      test_passages_ids == tests_ids
     end
   end
 end

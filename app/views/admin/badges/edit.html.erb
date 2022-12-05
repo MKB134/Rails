@@ -1,10 +1,5 @@
-<h1><%= t('.header') %></h1>
+<h1><%= t('.edit_badge') %></h1>
 
-<div class="card">
-  <div class="card-body">
-    <%= render 'form', badge: @badge %>
-  </div>
-</div>
-
-<%= link_to t('show'), edit_admin_badge_path(@badge) %> |
-<%= link_to t('back'), admin_badges_path %>
+<%= render 'form', badge: @badge %>
+<%= link_to t('.show'), admin_badge_path(@badge) %> |
+<%= link_to t('.back'), admin_badges_path %>
