@@ -4,11 +4,13 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
-  has_many :badges, through: :test_passages_badges
-  has_many :test_passages_badges, dependent: :delete_all
+  has_many :badges, through: :badges_users
+  has_many :badges_users, dependent: :delete_all
 
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_next_question, on: :update
+
+  scope :sucessful, -> { where(sucessful: true) }
 
   def complited?
     current_question.nil?
@@ -24,6 +26,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.sucessful = true if success?
     save!
   end
 

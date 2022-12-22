@@ -11,8 +11,8 @@ class User < ApplicationRecord
   has_many :gists, dependent: :nullify
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
-  has_many :test_passages_badges, through: :test_passages
-  has_many :badges, through: :test_passages_badges
+  has_many :badges_users, dependent: :destroy
+  has_many :badges, through: :badges_users
   has_many :author, class_name: 'Test', foreign_key: 'author_id', dependent: :nullify
 
   def show_passed_by_level(level)

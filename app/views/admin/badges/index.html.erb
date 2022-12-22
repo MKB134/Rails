@@ -1,18 +1,30 @@
-<h1><%= t('.header') %></h1>
+<p id="notice"><%= notice %></p>
 
-<table class="table table-striped table-borderless">
+<h1><%= t('.badges') %></h1>
+
+<table class="table">
   <thead>
   <tr>
-    <th scope="col"><%= t('.title') %></th>
-    <th scope="col"><%= t('.image') %></th>
-    <th scope="col"><%= t('.rule') %></th>
-    <th scope="col" colspan="3"></th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.badge') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
   </tr>
   </thead>
 
   <tbody>
-  <%= render @badges %>
+  <% @badges.each do |badge| %>
+    <tr>
+      <td><%= badge.title %></td>
+      <td><%= image_tag "badges/#{badge.image}.svg", width: "50" %></td>
+      <td><%= link_to t('.show'), admin_badge_path(badge) %></td>
+      <td><%= link_to t('.edit'), edit_admin_badge_path(badge) %></td>
+      <td><%= link_to t('.delete'), admin_badge_path(badge), method: :delete, data: { confirm: t('.sure') } %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new'), new_admin_badge_path, class: 'btn btn-primary' %>
+
+
+<br><%= link_to t('.new_badge'), new_admin_badge_path %></br>
+<%= link_to t('.back'), admin_tests_path %>

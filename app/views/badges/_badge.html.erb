@@ -1,3 +1,26 @@
-<tr>
-  <td class="align-middle" scope="row"><%= badge.title %></td>
-</tr>
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('.badges') %></h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th><%= t('.badge') %></th>
+    <th><%= t('.title') %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @badges.each do |badge| %>
+    <tr>
+      <td><%= image_tag "badges/#{badge.image}.svg", width: "50" %></td>
+      <td><%= badge.title %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('.back'), tests_path %>
