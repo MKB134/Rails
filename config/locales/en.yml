@@ -21,6 +21,8 @@ en:
       admin_badges: "Управление бэйджами"
 
   test_passages:
+    show:
+      timer: "time left"
     result:
       header: "The %{title} Test was completed!"
     gist:

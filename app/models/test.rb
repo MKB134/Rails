@@ -3,7 +3,7 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User', optional: true
 
   validates :title, presence: true
-  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :level, :timer, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
 
   has_many :questions, dependent: :destroy
@@ -21,5 +21,9 @@ class Test < ApplicationRecord
 
   def self.titles_by_category(title)
     by_category(title).pluck(:title)
+  end
+
+  def time_limited?
+    timer.positive?
   end
 end

@@ -15,6 +15,9 @@
       <%= @test.author.email %>
     </p>
   </thead>
+  <% if @test.timer > 0 %>
+    <h3 class="mb-4"><%= t('.timer') %>: <%= timer_in_seconds(@test.timer) %></h3>
+  <% end %>
   <tbody>
     <%= render @test.questions %>
   </tbody>

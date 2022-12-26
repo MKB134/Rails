@@ -19,6 +19,8 @@ ru:
     failure: "Во время сохранения Gist произошла ошибка!"
 
   test_passages:
+    show:
+      timer: "Оставшееся время"
     result:
       header: "Тест %{title} успешно завершен!"
 
@@ -96,7 +98,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
-        queston_count: "Колличество вопросов"
+        question_count: "Колличество вопросов"
         actions:  "Действия"
       test:
         show_button: "Показать"
