@@ -1,5 +1,4 @@
-  <div class="form-group">
-    <%= form_with model: [:admin, @test], local: true do |form| %>
+ <%= form_with model: [:admin, @test], local: true do |form| %>
       <%= render 'shared/errors', resource: @test %>
 
       <p>
@@ -17,5 +16,9 @@
         <%= form.collection_select :category_id, Category.all, :id, :title, promt: true, class: 'form-control' %>
       </p>
 
+   <div class="form-group col-md-4">
+     <%= form.number_field :timer, id: :timer, min: 0, class: 'form-control form-behind-checkbox', placeholder: 'seconds' %>
+   </div>
+
       <p><%= form.submit class: 'btn btn-primary' %></p>
-    <% end %>
+ <% end %>

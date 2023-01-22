@@ -6,8 +6,15 @@
 <p>
   <%= @test_passage.current_question.body %>
 </p>
-
-
+<% if @test_passage.test.time_limited? %>
+  <div class="text-center">
+    <%= t('.timer') + ': ' %>
+    <%= content_tag :span,
+                    (@test_passage.time_left),
+                    class: 'timer',
+                    data: { time_left: @test_passage.time_left} %>
+  </div>
+<% end %>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>

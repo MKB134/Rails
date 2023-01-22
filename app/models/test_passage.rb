@@ -9,6 +9,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_next_question, on: :update
+  before_update :before_update_check_time_limit
 
   scope :sucessful, -> { where(sucessful: true) }
 
@@ -30,9 +31,18 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def time_left
+    (created_at.to_i + test.timer) - Time.current.to_i
+  end
+
+  def timer_in_seconds
+    test.timer * 60
+  end
+
   def question_number
     test.questions.where('id <= ?', current_question.id).count
   end
+
 
 private
 
@@ -54,5 +64,11 @@ private
 
   def before_validation_set_first_question
     self.current_question = test.questions.first
+  end
+
+  def before_update_check_time_limit
+    return unless test.time_limited?
+
+    self.current_question = nil if time_left <= 0
   end
 end
